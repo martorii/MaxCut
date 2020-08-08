@@ -1249,8 +1249,10 @@ def MaxCutAllAdjacencyMatrices(n, initial_partition_type, k, min_weight, max_wei
     if storeCSV:
         DeleteTempResults("worst_instance.csv")
         NumpyToCsv(worstGraph, "worst_instance")
-        DeleteTempResults("steps_mean.csv")
-        NumpyToCsv(steps_mean, "steps_mean")
+        DeleteTempResults("steps_max.csv")
+        NumpyToCsv(steps_max, "steps_max")
+	DeleteTempResults("max_steps.csv")
+        NumpyToCsv(current_max , "max_steps")
     return steps_mean, steps_sd, steps_max, worstGraph
 
 def SmoothedComplexity(W, n, k, initial_partition_type, dropout, iters_for_perturbation, heuristic, sigma):
@@ -2558,7 +2560,7 @@ initial_partition_type = "0"
 k=2
 min_weight = -1
 max_weight = 1
-n_tries = 1
+n_tries = 1000
 heuristic = "GBF"
 dropout = 0
 

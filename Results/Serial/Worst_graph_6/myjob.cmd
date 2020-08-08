@@ -13,5 +13,5 @@
 
 module load slurm_setup
 module load python
-source activate py36
+source activate py38
 python Worst_graph_6.py
